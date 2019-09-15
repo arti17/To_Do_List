@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Detail{% endblock %}
+
+{% block content %}
+    <h1 class="center">Task Detail</h1>
+    <table class="centered striped highlight">
+        <thead>
+        <tr>
+            <th>Description</th>
+            <th>Full description</th>
+            <th>Status</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>{{ task.description }}</td>
+            <td>{{ task.full_description|linebreaks }}</td>
+            <td>{{ task.get_status_display }}</td>
+            <td>{{ task.date }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="{% url 'index' %}" class="waves-effect waves-light btn-small" style="margin-top: 20px; margin-left: 40%;">Return to main page</a>
+{% endblock %}

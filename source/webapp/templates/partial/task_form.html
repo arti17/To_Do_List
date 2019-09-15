@@ -1,0 +1,28 @@
+{% load widget_tweaks %}
+{% csrf_token %}
+
+{% for field in form %}
+    <div class="row">
+        <div class="input-field col s6 offset-s3">
+            <p>{{ field|add_class:' input-field materialize-textarea' }}</p>
+            <label for="{{ field.id_for_description }}">{{ field.label }}
+                {% if field.field.required %}
+                    <span class="red-text">*</span>
+                {% endif %}
+            </label>
+            {% for error in field.errors %}
+                <span class="red-text text-darken-3" data-error="wrong" data-success="right">{{ error }}</span>
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}
+
+<div class="row">
+    <div class="col s5 offset-s5">
+        <button class="btn waves-effect waves-light" type="submit">{{ btn_text }}
+            <i class="material-icons right">send</i>
+        </button>
+    </div>
+    <a href="{% url 'index' %}" class="btn waves-effect waves-light col s2 offset-s5"
+       style="margin-top: 10px;">Cancel</a>
+</div>

@@ -1,0 +1,60 @@
+[
+{
+  "model": "webapp.task",
+  "pk": 14,
+  "fields": {
+    "description": "Task 45",
+    "full_description": "Full\r\ndescription",
+    "status": "in_progress",
+    "date": "2019-09-30"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 15,
+  "fields": {
+    "description": "Task 24",
+    "full_description": "Task\r\n24 \r\ndescription",
+    "status": "done",
+    "date": "2019-09-06"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 16,
+  "fields": {
+    "description": "Description",
+    "full_description": "Full description",
+    "status": "new",
+    "date": "2019-09-24"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 17,
+  "fields": {
+    "description": "Task 123",
+    "full_description": "1 description\r\n2 desc\r\n3 ADS\r\n4 test",
+    "status": "in_progress",
+    "date": "2019-09-08"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$0CiQgdBzwSEo$IvsyCESd/fQ4oAgkAhGOUKbAtZZ8rhXpdTvNuIWmWfY=",
+    "last_login": "2019-09-06T17:42:02.330Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-09-05T14:34:27.589Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

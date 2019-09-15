@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Delete task {{ task.pk }}
+{% endblock %}
+
+{% block content %}
+    <div class="center-align">
+        <h4>Delete task?</h4>
+        <div class="collection">
+            <a class="collection-item"><b>Description: </b>{{ task.description }}</a>
+            <a class="collection-item"><b>Full description: </b>{{ task.full_description }}</a>
+            <a class="collection-item"><b>Status: </b>{{ task.status }}</a>
+            <a class="collection-item"><b>Date: </b>{{ task.date }}</a>
+        </div>
+    </div>
+    <div class="center-align">
+        <a href="{% url 'index' %}" class="btn waves-effect waves-light deep-blue accent-3"
+           style="display: inline-block">Cancel</a>
+        <form action="/delete/{{ task.pk }}" method="POST" style="display: inline-block">
+            {% csrf_token %}
+            <button class="btn waves-effect waves-light deep-orange accent-3" type="submit"
+                    style="display: inline-block">Delete
+            </button>
+        </form>
+    </div>
+{% endblock %}

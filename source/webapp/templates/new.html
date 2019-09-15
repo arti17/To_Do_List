@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Add new
+{% endblock %}
+
+{% block content %}
+    <h1 class="center">Add new task</h1>
+    <form class="col s12" action="/new/" method="POST">
+
+        {% include 'partial/task_form.html' with btn_text='Create' %}
+
+    </form>
+{% endblock %}
+
+{% block script %}
+    $("#id_date").addClass("datepicker");
+{% endblock %}
