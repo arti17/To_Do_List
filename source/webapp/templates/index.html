@@ -5,8 +5,6 @@
 {% block content %}
     <form action="delete-items/" method="POST">
         {% csrf_token %}
-
-
         <h1 class="center">To-Do List</h1>
 
         <table class="centered striped highlight">
@@ -19,7 +17,6 @@
                 <th>Actions</th>
             </tr>
             </thead>
-
             <tbody>
             {% for task in tasks %}
                 <td><label>
@@ -37,19 +34,15 @@
                             class="material-icons">update</i></a>
                 </td>
                 </tr>
-
             {% endfor %}
-
             </tbody>
         </table>
 
         <a href="{% url 'new' %}" class="btn-floating btn-large waves-effect waves-light red right pulse"
            style="margin-top: 20px;"><i class="material-icons">add</i></a>
 
-
         <button class="btn waves-effect waves-light deep-orange accent-3" type="submit"
                 style="display: inline-block; margin-top: 20px;">Delete marked
         </button>
     </form>
-
 {% endblock %}
