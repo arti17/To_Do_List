@@ -10,7 +10,10 @@
         <table class="centered striped highlight">
             <thead>
             <tr>
-                <th>#</th>
+                <th><label>
+                    <input id="all" class="filled-in" type="checkbox"/>
+                    <span></span>
+                </label></th>
                 <th>Description</th>
                 <th>Status</th>
                 <th>Date</th>
@@ -41,8 +44,26 @@
         <a href="{% url 'new' %}" class="btn-floating btn-large waves-effect waves-light red right pulse"
            style="margin-top: 20px;"><i class="material-icons">add</i></a>
 
-        <button class="btn waves-effect waves-light deep-orange accent-3" type="submit"
+        <button id="btn" class="btn waves-effect waves-light deep-orange accent-3" type="submit" disabled="disabled"
                 style="display: inline-block; margin-top: 20px;">Delete marked
         </button>
     </form>
+{% endblock %}
+
+{% block script %}
+    $('#all').click(function(){
+        if ($(this).is(':checked')){
+            $('input:checkbox').prop('checked', true);
+        } else {
+            $('input:checkbox').prop('checked', false);
+        }
+    });
+
+    $('input[type="checkbox"]').change(function(){
+        if ($('input[type=checkbox]').is(":checked")) {
+            $('#btn').attr('disabled', false);
+        } else {
+            $('#btn').attr('disabled', true);
+        }
+    });
 {% endblock %}
